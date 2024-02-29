@@ -23,7 +23,7 @@ export class ProjectUpdatedEventHandler
     this.logger.log('Project updated event handler');
     const { payload } = event;
     const channel = (await this.client.channels.cache.get(
-      '1212609117626310666',
+      this.channel_id,
     )) as TextChannel;
     const message = new EmbedBuilder();
     message.setTitle(`Project updated: ${payload.projects_v2.title}`);

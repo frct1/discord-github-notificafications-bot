@@ -24,7 +24,7 @@ export class ProjectCreatedEventHandler
     this.logger.log('Project created event handler');
 
     const channel = (await this.client.channels.cache.get(
-      '1212609117626310666',
+      this.channel_id,
     )) as TextChannel;
     const message = new EmbedBuilder();
     message.setURL(
